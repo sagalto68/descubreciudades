@@ -192,29 +192,107 @@
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
     .reveal.in { opacity: 1; transform: none; }
 
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      nav { padding: 0 1.5rem; }
+    /* RESPONSIVE MÓVIL */
+    @media (max-width: 768px) {
+      /* NAV */
+      nav { padding: 0 1.25rem; height: 56px; }
+      nav svg { width: 160px; height: 34px; }
       .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; padding: 90px 1.5rem 3rem; min-height: auto; }
-      .areas-layout { grid-template-columns: 1fr; }
+      .side-bar { display: none; }
+
+      /* HERO */
+      .hero { grid-template-columns: 1fr; padding: 80px 1.25rem 3rem; min-height: auto; gap: 2.5rem; }
+      .hero h1 { font-size: clamp(2.2rem, 9vw, 3rem); margin-bottom: 1.25rem; }
+      .hero-sub { font-size: .9375rem; margin-bottom: 2rem; max-width: 100%; }
+      .hero-actions { flex-direction: column; align-items: flex-start; gap: .875rem; }
+      .btn-primary { width: 100%; justify-content: center; padding: 1rem; font-size: 1rem; }
+      .btn-ghost { font-size: .875rem; }
+      .map-card { border-radius: 16px; aspect-ratio: 1/.7; }
+
+      /* ÁREAS */
+      .cases-section { padding: 4rem 1.25rem; }
+      .areas-layout { grid-template-columns: 1fr; gap: 2rem; }
       .areas-photo { display: none; }
-      .exp-content { grid-template-columns: 1fr; }
-      .phone-mockup { display: none; }
-      .how-layout { grid-template-columns: 1fr; }
+      .areas-grid { gap: 1rem; margin-top: 1.75rem; }
+      .area-card { padding: 1.5rem; gap: 1rem; border-radius: 14px; }
+      .area-title { font-size: 1.125rem; }
+      .area-desc { font-size: .875rem; }
+      .area-datos { padding: .75rem; }
+      .area-datos-text { font-size: .75rem; }
+      .area-panel-badge { font-size: .7rem; padding: .4rem .75rem; }
+
+      /* EXPERIENCIA SELECTOR */
+      .experiencia-section { padding: 4rem 1.25rem; }
+      .experiencia-section .section-h2 { font-size: clamp(1.75rem, 7vw, 2.5rem); }
+      .exp-tabs { gap: .5rem; }
+      .exp-tab { padding: .5rem .875rem; font-size: .8rem; }
+      .exp-content { grid-template-columns: 1fr; gap: 2rem; }
+      .phone-mockup { display: flex; justify-content: center; }
+      .phone-frame { width: 200px; }
+      .exp-panel h3 { font-size: 1.25rem; }
+      .exp-panel p { font-size: .875rem; }
+
+      /* PROCESO */
+      .how-section { padding: 4rem 1.25rem; }
+      .how-layout { grid-template-columns: 1fr; gap: 2rem; }
       .how-photo { display: none; }
-      .how-grid { grid-template-columns: 1fr; }
-      .how-step { border-right: none; }
-      .how-step:nth-child(3) { border-bottom: 1px solid var(--rule); }
-      .panel-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .why-grid { grid-template-columns: 1fr; }
-      .why-item { border-right: none; }
-      .quien-grid { grid-template-columns: 1fr; }
+      .how-grid { grid-template-columns: 1fr; border-radius: 12px; margin-top: 1.75rem; }
+      .how-step { padding: 1.5rem; border-right: none !important; }
+      .how-step:not(:last-child) { border-bottom: 1px solid var(--rule); }
+      .how-step h3 { font-size: .9375rem; }
+      .how-step p { font-size: .8125rem; }
+
+      /* PANEL */
+      .panel-section { padding: 4rem 1.25rem; }
+      .panel-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .mock-num { font-size: 1.5rem; }
+      .panel-bullets li { font-size: .875rem; }
+
+      /* POR QUÉ */
+      .why-section { padding: 4rem 1.25rem; }
+      .why-grid { grid-template-columns: 1fr; border-radius: 12px; }
+      .why-item { border-right: none !important; padding: 1.25rem 1.5rem; }
+      .why-item:not(:last-child) { border-bottom: 1px solid var(--rule); }
+      .why-item:last-child { border-bottom: none; }
+      .why-item h4 { font-size: .875rem; }
+      .why-item p { font-size: .8125rem; }
+
+      /* PARA QUIÉN */
+      .para-quien { padding: 4rem 1.25rem; }
+      .quien-layout { grid-template-columns: 1fr !important; gap: 0 !important; }
+      .quien-layout > div:last-child { display: none; }
+      .quien-grid { grid-template-columns: 1fr; gap: 1rem; margin-top: 1.75rem !important; }
+      .quien-card { padding: 1.5rem; border-radius: 12px; }
+      .quien-card h3 { font-size: 1.0625rem; }
+      .quien-card p { font-size: .875rem; }
+
+      /* CONTACTO */
+      .contact-section { padding: 4rem 1.25rem; }
       .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .form-row { grid-template-columns: 1fr; }
-      .cases-section, .experiencia-section, .how-section, .panel-section, .why-section, .para-quien, .contact-section { padding: 5rem 1.5rem; }
-      footer { padding: 2rem 1.5rem; }
+      .form-card { padding: 1.5rem; }
+      .section-h2 { font-size: clamp(1.75rem, 7vw, 2.5rem); }
+      .section-p { font-size: .9375rem; }
+
+      /* FOOTER */
+      footer { padding: 2rem 1.25rem; }
+      .footer-inner { flex-direction: column; gap: 1.25rem; align-items: flex-start; }
+      .footer-links { flex-wrap: wrap; gap: 1rem; }
     }
+
+    /* TABLET */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      nav { padding: 0 2rem; }
+      .nav-links { gap: 1.5rem; }
+      .hero { padding: 100px 2rem 60px; gap: 2.5rem; }
+      .hero h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); }
+      .areas-layout { gap: 3rem; }
+      .how-layout { gap: 3rem; }
+      .panel-grid { gap: 3rem; }
+      .contact-grid { gap: 3rem; }
+      .cases-section, .experiencia-section, .how-section, .panel-section, .why-section, .para-quien, .contact-section { padding: 5rem 2rem; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: none; transition: none; }
       .live-dot, .tag-dot { animation: none; }
@@ -297,7 +375,7 @@
               <div class="area-icon" style="background:rgba(255,107,53,.1)">🏛️</div>
               <div><div class="area-label">Área</div><div class="area-title">Turismo</div></div>
             </div>
-            <div class="area-desc">Rutas patrimoniales, itinerarios culturales y guías autoguiadas. El visitante descubre el municipio a su ritmo.</div>
+            <div class="area-desc">Recorridos autoguiados por rutas patrimoniales y culturales. El visitante descubre el municipio a su ritmo.</div>
             <div class="area-datos">
               <div class="area-datos-label">Mides todos los datos</div>
               <div class="area-datos-text">Panel en tiempo real con visitas, rutas completadas, leads captados y ranking de participación. Tú decides qué activar y cuándo.</div>
