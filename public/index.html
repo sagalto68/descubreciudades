@@ -67,6 +67,7 @@
     .area-datos-label { font-size: .65rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--orange); margin-bottom: .375rem; }
     .area-datos-text { font-size: .8rem; color: var(--muted); line-height: 1.6; }
     .area-panel-badge { display: inline-flex; align-items: center; gap: .5rem; background: var(--bg2); border: 1px solid var(--rule); border-radius: 8px; padding: .5rem .875rem; font-size: .75rem; font-weight: 500; color: var(--muted); }
+    .mobile-photo-banner { display: none; }
 
     /* EXPERIENCIA SELECTOR */
     .experiencia-section { background: var(--ink); padding: 7rem 3rem 7rem 4rem; border-bottom: 1px solid #222; }
@@ -222,7 +223,11 @@
       .cases-section { padding: 4rem 1.25rem; }
       .areas-layout { grid-template-columns: 1fr; gap: 2rem; }
       .areas-photo { display: none; }
-      .areas-grid { gap: 1rem; margin-top: 1.75rem; }
+      .mobile-photo-banner { display: block; border-radius: 16px; overflow: hidden; aspect-ratio: 16/10; margin-bottom: 1.75rem; position: relative; }
+      .mobile-photo-banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .mobile-photo-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.55), transparent 60%); display: flex; align-items: flex-end; padding: 1.25rem; }
+      .mobile-photo-overlay span { color: white; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: rgba(255,107,53,.92); padding: .35rem .8rem; border-radius: 100px; }
+      .areas-grid { gap: 1rem; margin-top: 0; }
       .area-card { padding: 1.5rem; gap: 1rem; border-radius: 14px; }
       .area-title { font-size: 1.125rem; }
       .area-desc { font-size: .875rem; }
@@ -250,7 +255,7 @@
       .how-section { padding: 4rem 1.25rem; }
       .how-layout { grid-template-columns: 1fr; gap: 2rem; }
       .how-photo { display: none; }
-      .how-grid { grid-template-columns: 1fr; border-radius: 12px; margin-top: 1.75rem; }
+      .how-grid { grid-template-columns: 1fr; border-radius: 12px; margin-top: 0; }
       .how-step { padding: 1.5rem; border-right: none !important; }
       .how-step:not(:last-child) { border-bottom: 1px solid var(--rule); }
       .how-step h3 { font-size: .9375rem; }
@@ -275,7 +280,7 @@
       .para-quien { padding: 4rem 1.25rem; }
       .quien-layout { grid-template-columns: 1fr !important; gap: 0 !important; }
       .quien-layout > div:last-child { display: none; }
-      .quien-grid { grid-template-columns: 1fr; gap: 1rem; margin-top: 1.75rem !important; }
+      .quien-grid { grid-template-columns: 1fr; gap: 1rem; margin-top: 0 !important; }
       .quien-card { padding: 1.5rem; border-radius: 12px; }
       .quien-card h3 { font-size: 1.0625rem; }
       .quien-card p { font-size: .875rem; }
@@ -382,6 +387,10 @@
       <div class="areas-left">
         <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.75rem,2.8vw,2.5rem);font-weight:700;line-height:1.15;color:var(--ink);" class="reveal">Múltiples usos<br/>para tu ciudad.</h2>
         <p class="section-p reveal" style="margin-top:.875rem; margin-bottom:2.5rem;">Cada área de gobierno contrata su propio servicio, de forma independiente. Su presupuesto, su panel, sus experiencias, sus datos.</p>
+        <div class="mobile-photo-banner">
+          <img src="/madrid.jpg" alt="Ciudad"/>
+          <div class="mobile-photo-overlay"><span>Concejalías</span></div>
+        </div>
         <div class="areas-grid reveal">
 
           <div class="area-card">
@@ -582,6 +591,10 @@
       <div class="how-left">
         <h2 class="section-h2 reveal">De la idea a la experiencia,<br/>sin complicaciones técnicas.</h2>
         <p class="section-p reveal" style="margin-top:1rem;">Nos encargamos de toda la implementación. El equipo del ayuntamiento solo necesita elegir qué contar.</p>
+        <div class="mobile-photo-banner">
+          <img src="/turista.jpg" alt="Turista descubriendo ciudad"/>
+          <div class="mobile-photo-overlay"><span>Proceso</span></div>
+        </div>
         <div class="how-grid reveal">
           <div class="how-step"><div class="how-num">PASO 01</div><h3>Diseñamos juntos</h3><p>Definimos la ruta, los puntos de interés y el tipo de experiencia. Vosotros elegís el qué, nosotros el cómo.</p></div>
           <div class="how-step"><div class="how-num">PASO 02</div><h3>Configuramos el contenido</h3><p>Textos, fotos, vídeos y retos desde el panel de administración. Sin código ni dependencias técnicas externas.</p></div>
@@ -664,6 +677,10 @@
   <div class="para-quien-inner section-inner">
     <h2 class="section-h2">Ejemplos de uso.</h2>
     <p class="section-p" style="margin-top:1rem;">Hablamos el idioma de cada área de gobierno.</p>
+    <div class="mobile-photo-banner">
+      <img src="/frigiliana.jpg" alt="Calle histórica"/>
+      <div class="mobile-photo-overlay"><span>Ejemplos</span></div>
+    </div>
     <div class="quien-layout" style="display:grid;grid-template-columns:1fr .65fr;gap:4rem;align-items:start;margin-top:3rem;">
       <div class="quien-grid" style="margin-top:0;">
         <div class="quien-card">
